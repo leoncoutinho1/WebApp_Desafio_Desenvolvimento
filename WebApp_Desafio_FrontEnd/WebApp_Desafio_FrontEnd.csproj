@@ -18,4 +18,11 @@
     <Folder Include="wwwroot\lib\bootstrap-datepicker\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Departamentos\Cadastrar.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
