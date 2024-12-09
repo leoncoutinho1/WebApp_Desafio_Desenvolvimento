@@ -16,6 +16,8 @@
 
     $('#dataTables-Departamentos tbody').on('click', 'tr', function () {
         if ($(this).hasClass('selected')) {
+            var data = table.row('.selected').data();
+            window.location.href = config.contextPath + 'Departamentos/Editar/' + data.ID;
             $(this).removeClass('selected');
         } else {
             table.$('tr.selected').removeClass('selected');

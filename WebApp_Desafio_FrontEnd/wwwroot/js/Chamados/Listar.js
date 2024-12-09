@@ -19,6 +19,8 @@
 
     $('#dataTables-Chamados tbody').on('click', 'tr', function () {
         if ($(this).hasClass('selected')) {
+            var data = table.row('.selected').data();
+            window.location.href = config.contextPath + 'Chamados/Editar/' + data.ID;
             $(this).removeClass('selected');
         } else {
             table.$('tr.selected').removeClass('selected');
