@@ -10,6 +10,21 @@
         language: 'pt-BR'
     });
 
+    $('#form').validate({
+        rules: {
+            Descricao: {
+                required: true,
+                maxlength: 100
+            }
+        },
+        messages: {
+            Descricao: {
+                required: "A descrição é obrigatória.",
+                maxlength: "A descrição não pode ter mais de 100 caracteres."
+            }
+        }
+    });
+
     $('#btnCancelar').click(function () {
         Swal.fire({
             html: "Deseja cancelar essa operação? O registro não será salvo.",
@@ -25,7 +40,6 @@
     });
 
     $('#btnSalvar').click(function () {
-
         if ($('#form').valid() != true) {
             FormularioInvalidoAlert();
             return;
@@ -40,7 +54,7 @@
             url: url,
             data: chamado,
             success: function (result) {
-
+                
                 Swal.fire({
                     type: result.Type,
                     title: result.Title,

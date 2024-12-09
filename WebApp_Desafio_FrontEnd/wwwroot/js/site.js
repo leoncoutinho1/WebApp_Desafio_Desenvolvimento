@@ -92,3 +92,14 @@ function SerielizeForm(form) {
     });
     return json;
 }
+
+/**
+ * Serieliza o formulário em um objeto js
+ * jquery obj do form => $('#form')
+ * @param Date date
+ */
+function DateFromString(dateString) {
+    var dateParts = dateString.split("/");
+    // month is 0-based, that's why we need dataParts[1] - 1
+    return new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
+}
